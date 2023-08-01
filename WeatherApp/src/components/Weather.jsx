@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 // import { addLocation } from "../mySlice";
 import "./Weather.css";
 
@@ -8,12 +8,15 @@ const Weather = ({ item }) => {
   const [weather, setWeather] = useState({});
   const [currentTime, setCurrentTime] = useState("");
   const [unit, setUnit] = useState("imperial");
+  //  const selector = useSelector(state => state)
+  //  console.log(selector)
 
-  const dispatch = useDispatch();
 
-  const apiKey = "7ce4269d73bd6a588305aa8c08d78a17";
+  // const dispatch = useDispatch();
+
+  const apiKey = import.meta.env.VITE_API_KEY;
   const lang = "en";
-  const city = "My_City";
+
 
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&lang=${lang}&appid=${apiKey}`;
 
@@ -81,13 +84,19 @@ const Weather = ({ item }) => {
     return ((fahrenheit - 32) * 5) / 9;
   };
 
-  const formatTime = (timestamp) => {
-    const date = new Date(timestamp * 1000);
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const formattedTime = `${hours}: ${minutes < 10 ? "0" : ""}${minutes}`;
+  const formatTime = (timestamp, timezoneOffset) => {
+    const date = new Date((timestamp + timezoneOffset) * 1000);
+    const hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
+    const period = hours >= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12;
+    const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+    const formattedTime = `${formattedHours}:${formattedMinutes}:${period}`;
     return formattedTime;
+
   };
+
+
 
   const dateBuilder = (d, timezone) => {
     const currentTime = new Date(d.getTime() + timezone * 1000); // Convert UTC time to local time
@@ -124,15 +133,8 @@ const Weather = ({ item }) => {
   };
 
   return (
-    <div
-      className={
-        typeof weather.main != "undefined"
-          ? weather.main.temp > 80
-            ? "app warm"
-            : "app"
-          : "app"
-      }
-    >
+
+    <div>
       <main>
         <div className="search-box">
           <input
@@ -149,13 +151,7 @@ const Weather = ({ item }) => {
           <div>
             <div className="location-box">
               <div className="location">
-                {weather.name}, {weather.sys.country}
-                {/* <li>
-                  <button onClick={() => dispatch(addLocation())}>
-                    Add To Favorite
-                  </button>
-                </li> */}
-              </div>
+                {weather.name}, {weather.sys.country} </div>
 
               <div className="date">
                 {dateBuilder(new Date(), weather.timezone)}
@@ -168,16 +164,13 @@ const Weather = ({ item }) => {
                   ? `${Math.round(weather.main.temp)} °F`
                   : `${Math.round(convertToCelsius(weather.main.temp))} °C`}
               </div>
-              <button
-                style={{ fontSize: "20px", position: "absolute" }}
-                onClick={toggleUnit}
-              >
+              <button onClick={toggleUnit}>
                 {unit === "imperial" ? "°C" : "°F"}
               </button>
               <div className="weather">{weather.weather[0].main}</div>
               <div id="weatherCard">
                 <div className="feels_like">
-                  Feels-Like: {Math.round(weather.main.feels_like)}°F
+                  ☃️🌡️Feels-Like: {Math.round(weather.main.feels_like)}°F
                 </div>
                 <div className="Max">
                   ⬆️Max: {Math.round(weather.main.temp_max)}°F
@@ -186,26 +179,23 @@ const Weather = ({ item }) => {
                   ⬇️Min: {Math.round(weather.main.temp_min)}°F
                 </div>
 
-                <div className="lat">lat: {Math.round(weather.coord.lat)}</div>
+                <div className="lat">🌍lat: {Math.round(weather.coord.lat)}</div>
 
-                <div className="lon">lon: {Math.round(weather.coord.lon)}</div>
+                <div className="lon">🌏lon: {Math.round(weather.coord.lon)}</div>
 
                 <div className="humidity">
                   💧Humidity: {weather.main.humidity}%
                 </div>
 
-                <div className="visibility">
+                <div className="visibility">👁️‍🗨️
                   Visibility: {weather.visibility}ft
                 </div>
 
-                <div className="wind">≊Wind Speed: {weather.wind.speed}mph</div>
+                <div className="wind">≊🍃Wind Speed: {weather.wind.speed}mph</div>
+                <div className="sunrise">🌅SunRise: {formatTime(weather.sys.sunrise, weather.timezone)}</div>
+                <div className="sunset">🌇SunSet: {formatTime(weather.sys.sunset, weather.timezone)}</div>
 
-                <div className="sunrise">
-                  🌅SunRise: {formatTime(weather.sys.sunrise)} AM
-                </div>
-                <div className="sunset">
-                  🌇SunSet: {formatTime(weather.sys.sunset)} PM
-                </div>
+
               </div>
             </div>
           </div>

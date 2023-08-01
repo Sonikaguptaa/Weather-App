@@ -4,62 +4,105 @@
   box-sizing: border-box;
 }
 
+main {
+  height: 100vh;
+  padding: 25px;
+  background-image: url("../assets/sea-7039471_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+#heading {
+  background-image: linear-gradient(to bottom,
+      rgba(180, 198, 212, 0.66),
+      rgba(43, 72, 117, 0.75),
+      rgb(186, 228, 243),
+      rgb(6, 12, 79));
+  position: relative;
+  text-align: left;
+  height: 50px;
+  font-size: 20px;
+  box-shadow: 0 0 25px 20px rgb(246, 241, 241);
+  color: #1e4174c7;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+
+
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .nav {
-  background-color: rgb(136, 171, 193);
-  font-size: 20px;
+  display: flex;
+  position: fixed;
+  top: 10;
+  left: 70%;
+  width: 100%;
+  z-index: 10;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: -50px;
+  margin-bottom: 10px;
+
 }
-h1 {
-  text-align: center;
+
+button {
+
+  font-size: 18px;
+  position: absolute;
+  color: rgb(19, 19, 45);
+  font-weight: 600;
+  background-color: rgba(173, 216, 230, 0.053);
+  border: none;
+  margin-top: 10px;
 }
 
 #weatherCard {
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .lat {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
 }
+
 .lon {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
 }
-.Min {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
 
+.Min {
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
@@ -67,30 +110,27 @@ h1 {
 }
 
 .Max {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
 }
-.feels_like {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
 
+.feels_like {
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
@@ -98,15 +138,13 @@ h1 {
 }
 
 .wind {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
@@ -114,15 +152,13 @@ h1 {
 }
 
 .humidity {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
-
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
@@ -130,46 +166,41 @@ h1 {
 }
 
 .visibility {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
-  width: 200px;
-  height: 70px;
-  box-shadow: 0 0 25px 4px black;
-
-  background-color: rgb(173, 205, 219);
-
-  border-radius: 16px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-.sunrise {
-  margin: 2rem 2rem 2rem 0;
-  padding: 0.5rem 0.5rem 1rem;
-
-  width: 200px;
-  height: 70px;
-  box-shadow: 0 0 25px 4px black;
-
-  background-color: rgb(173, 205, 219);
-
-  border-radius: 16px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-.sunset {
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  padding: 0.25rem 0.25rem 0.5rem;
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
   text-align: center;
-
   width: 200px;
   height: 70px;
   box-shadow: 0 0 25px 4px black;
-
   background-color: rgb(173, 205, 219);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.sunrise {
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
+  width: 200px;
+  height: 70px;
+  box-shadow: 0 0 25px 4px black;
+  background-color: rgb(173, 205, 219);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sunset {
+  margin: 10px 10px 10px 20px;
+  padding: 0.25rem 0.25rem;
+  text-align: center;
+  width: 200px;
+  height: 70px;
+  box-shadow: 0 0 25px 4px black;
+  background-color: rgb(173, 205, 219);
   border-radius: 16px;
   color: #fff;
   font-size: 20px;
@@ -179,7 +210,7 @@ h1 {
 .app {
   background-image: url("../assets/cold-bg.jpg");
   background-size: contain;
-  background-position: bottom;
+  /* background-position: bottom; */
   transition: 0.4 ease;
 }
 
@@ -187,57 +218,45 @@ h1 {
   background-image: url("../assets/warm-bg.jpg");
 }
 
-main {
-  height: 100%;
-  padding: 20px;
-
-  /* background-image: url("../assets/sea-7039471_1280.jpg"); */
-
-  background-image: linear-gradient(
-    to bottom,
-    rgba(180, 198, 212, 0.66),
-    rgba(43, 72, 117, 0.75)
-  );
-}
 
 .search-box {
   width: 100%;
   margin: 0 0 20px;
 }
+
 .search-box .search-bar {
   display: block;
   width: 100%;
-  padding: 15px;
-
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 16px 16px 16px 16px;
-  margin-top: -30px;
-  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
-
+  padding: 20px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.468);
+  border-radius: 0px 0px 20px 20px;
+  margin-top: -20px;
+  /* box-shadow: 0px 5px rgba(0, 0, 0, 0.2); */
   color: #313131;
   font-size: 20px;
-
-  transition: 0.4s ease;
+  /* transition: 0.4s ease; */
 }
 
 .search-box .search-bar:focus {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.256);
 }
 
 .location-box .location {
   color: #fff;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  text-shadow: 3px 3px rgba(53, 53, 144, 0.5);
 }
+
 .location-box .date {
   color: #fff;
   text-align: center;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 100;
   font-style: italic;
-  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+  text-shadow: 2px 2px rgba(53, 53, 122, 0.5);
 }
 
 .weather-box {
@@ -247,15 +266,13 @@ main {
 .weather-box .temp {
   position: relative;
   display: inline-block;
-  margin: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-
+  margin: 5px;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border-radius: 20px;
   padding: 10px 15px;
   color: #fff;
   font-size: 80px;
   font-weight: 900;
-
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
@@ -266,4 +283,40 @@ main {
   text-shadow: 3px 3px rgba(30, 30, 33, 0.5);
   font-size: 30px;
   font-weight: 900;
+}
+
+.major-cities {
+  background-image: linear-gradient(to bottom,
+      rgba(180, 198, 212, 0.66),
+      rgba(43, 72, 117, 0.75),
+      rgb(218, 207, 207),
+      rgb(6, 12, 79));
+
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 1rem 2rem 0;
+  padding: 1.5rem;
+
+  box-shadow: 15px 15px 15px 20px rgb(207, 216, 236);
+  transition: transform 0.4s ease;
+
+  background-color: rgb(173, 205, 219);
+  margin-left: auto;
+
+}
+
+.city-weather {
+  color: #3c4f80;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 2rem 2rem 2rem 0;
+  height: 200px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 10px 25px 4px black;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: rgba(219, 225, 226, 0.541);
 }

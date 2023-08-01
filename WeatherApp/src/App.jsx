@@ -3,40 +3,32 @@ import { Routes, Route } from "react-router-dom";
 
 import Weather from "./components/Weather";
 import NavBar from "./components/NavBar";
+import MajorCity from "./components/MajorCity";
 
 const App = () => {
-  // const [favoriteLocations, setFavoriteLocations] = useState([]);
 
-  // const addFavoriteLocation = (locationData) => {
-  //   setFavoriteLocations([...favoriteLocations, locationData]);
-  // };
-
-  // const removeFavoriteLocation = (locationName) => {
-  //   setFavoriteLocations(
-  //     favoriteLocations.filter((location) => location.name !== locationName)
-  //   );
-  // };
 
   return (
     <div>
       <NavBar />
 
-      <Routes>
-        <Route path="/" element={<></>} />
-        <Route path="/weather" element={<Weather />} />
 
-        {/* <Route path="/ MyLocations" element={<MyLocations />} /> */}
+
+
+
+      <Routes>
+        <Route path="/" element={<Weather />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/:symbol" element={<MajorCity />} />
+
+
       </Routes>
 
-      <Weather
-      // favoriteLocations={favoriteLocations}
-      // addFavoriteLocation={addFavoriteLocation}
-      />
+      {/* <Weather /> */}
 
-      {/* <MyLocations
-        favoriteLocations={favoriteLocations}
-        removeFavoriteLocation={removeFavoriteLocation}
-      /> */}
+
+
+
     </div>
   );
 };
