@@ -1,7 +1,7 @@
 
 # Exact Weather 
 
-The Weather App is a React application that allows users to get weather information for different cities using data from the OpenWeather API. Additionally, it displays the current time for each city using the WorldTime API.
+Exact Weather is a React application that allows users to get weather information for different cities using data from the OpenWeather API. Additionally, it displays the current time for each city using the WorldTime API.
 
 ### Features:
 Search for weather by city name Get weather data for multiple cities Display temperature in both Celsius or Fahrenheit View current time.
@@ -41,6 +41,9 @@ The main Weather component is responsible for fetching and displaying weather da
 
 #### MajorCity:
 The MajorCity component is a separate component that displays weather information for major cities, such as New York, Denver, Paris, Antarctica and New Delhi. It also uses data from the OpenWeather API.
+
+### ForeCast:
+The Forecast component is designed to provide a comprehensive weather forecast for a searched city. When a city is searched, the component retrieves the next 40 forecasts at 3-hour intervals, covering a span of 5 days. This ensures users have access to detailed weather information over the specified timeframe.
 
 ### Summery:
 This is one stop Weather solution to see the weather of major cities along with the option to search the weather of any city around Globe
