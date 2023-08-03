@@ -23,7 +23,7 @@ main {
   text-align: left;
   height: 50px;
   font-size: 20px;
-  box-shadow: 0 0 25px 20px rgb(246, 241, 241);
+  box-shadow: 5px 5px 5px rgb(80, 81, 98);
   color: #1e4174c7;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -40,7 +40,7 @@ body {
   display: flex;
   position: fixed;
   top: 10;
-  left: 70%;
+  left: 65%;
   width: 100%;
   z-index: 10;
   font-weight: bold;
@@ -56,16 +56,24 @@ button {
   position: absolute;
   color: rgb(19, 19, 45);
   font-weight: 600;
-  background-color: rgba(173, 216, 230, 0.053);
+  background-color: rgba(222, 231, 235, 0.082);
   border: none;
   margin-top: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  font-size: 20px;
+  color: #05032b;
 }
 
 #weatherCard {
   display: flex;
   flex-wrap: wrap;
-
+  transition: transform 0.3s ease;
 }
+
+
 
 .lat {
   margin: 10px 10px 10px 20px;
@@ -207,16 +215,6 @@ button {
   font-weight: bold;
 }
 
-.app {
-  background-image: url("../assets/cold-bg.jpg");
-  background-size: contain;
-  /* background-position: bottom; */
-  transition: 0.4 ease;
-}
-
-.app.warm {
-  background-image: url("../assets/warm-bg.jpg");
-}
 
 
 .search-box {
@@ -267,7 +265,6 @@ button {
   position: relative;
   display: inline-block;
   margin: 5px;
-  /* background-color: rgba(255, 255, 255, 0.2); */
   border-radius: 20px;
   padding: 10px 15px;
   color: #fff;
@@ -277,6 +274,12 @@ button {
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
+
+.weather-box .temp:hover {
+  transition: ease;
+  transform: scale(1.1);
+}
+
 
 .weather-box .weather {
   color: #fff;
@@ -319,4 +322,31 @@ button {
   border-radius: 25px;
   cursor: pointer;
   background-color: rgba(219, 225, 226, 0.541);
+}
+
+.Forcast-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #3c4f80;
+  gap: 20px;
+  padding: 10px;
+
+
+}
+
+.forecast-day {
+  background-image: linear-gradient(to bottom,
+      rgba(201, 214, 224, 0.66),
+      rgba(187, 202, 223, 0.75),
+      rgb(186, 228, 243),
+      rgb(46, 48, 69));
+  color: #071934c7;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration-line: underline, 15px;
+
+
+
+
 }

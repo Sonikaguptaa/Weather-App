@@ -1,5 +1,5 @@
 
-# Weather App
+# Exact Weather 
 
 The Weather App is a React application that allows users to get weather information for different cities using data from the OpenWeather API. Additionally, it displays the current time for each city using the WorldTime API.
 
@@ -21,11 +21,11 @@ To install the required dependencies, run the following command:
 Install the dependencies using npm install.
 Run the application using npm start.
 
-1- npm create vite@latest WeatherApp
-2- Choose Vite and javaScript from options
-3- cd WeatherApp
-4- npm install
-5- npm run dev
+#### 1- npm create vite@latest WeatherApp
+#### 2- Choose Vite and javaScript from options
+#### 3-cd WeatherApp
+#### 4- npm install
+#### 5- npm run dev
 
 The application will be accessible at http://localhost:5173/.
 
@@ -35,15 +35,15 @@ Sign up on the OpenWeather website (https://openweathermap.org/) to get your API
 ### Time API:
 The Time component fetches and displays the current time for each city using the WorldTime API ("http://worldtimeapi.org/api/ip").You can get the WorldTime API data without an API key, as it doesn't require authentication.
 
-## Components:
-### Weather:
+### Components:
+#### Weather:
 The main Weather component is responsible for fetching and displaying weather data from the OpenWeather API. It allows users to search for weather by city name and displays weather information for multiple cities.
 
-### MajorCity:
-The MajorCity component is a separate component that displays weather information for major cities, such as New York, Denver, Paris, Los Angeles and New Delhi. It also uses data from the OpenWeather API.
+#### MajorCity:
+The MajorCity component is a separate component that displays weather information for major cities, such as New York, Denver, Paris, Antarctica and New Delhi. It also uses data from the OpenWeather API.
 
 ### Summery:
-This is one stop Weather solution to see the weather of major cities along with the option to search the weather of any city aroound Globe
+This is one stop Weather solution to see the weather of major cities along with the option to search the weather of any city around Globe
 
 
 

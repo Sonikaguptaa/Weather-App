@@ -5,7 +5,7 @@ const MajorCity = () => {
   const [cities, setCities] = useState(["New York", "Denver", "Paris", "New Delhi", "Antarctica"]);
   const [weatherData, setWeatherData] = useState([]);
 
-  const apiKey = "7ce4269d73bd6a588305aa8c08d78a17";
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     const fetchData = async () => {
