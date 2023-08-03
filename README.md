@@ -66,4 +66,4 @@ The Forecast component is designed to provide a comprehensive weather forecast f
 
 This is one stop Weather solution to see the weather of major cities along with the option to search the weather of any city around Globe
 
-https://main--marvelous-otter-cf5481.netlify.app/
+### Exact Weather Link : https://main--marvelous-otter-cf5481.netlify.app/
