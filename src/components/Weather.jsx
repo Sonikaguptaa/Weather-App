@@ -78,17 +78,7 @@ const Weather = ({ item, setSelectedCity }) => {
     return timeString;
   };
 
-  const toggleUnit = () => {
-    setUnit((prevUnit) => (prevUnit === "imperial" ? "metric" : "imperial"));
-  };
 
-  const convertToFahrenheit = (celsius) => {
-    return (celsius * 9) / 5 + 32;
-  };
-
-  const convertToCelsius = (fahrenheit) => {
-    return ((fahrenheit - 32) * 5) / 9;
-  };
 
   const formatTime = (timestamp, timezoneOffset) => {
     const date = new Date((timestamp + timezoneOffset) * 1000);
@@ -136,6 +126,18 @@ const Weather = ({ item, setSelectedCity }) => {
 
     return `${day} ${date} ${month} ${year} ${timeBuilder(currentTime)} `;
 
+  };
+
+  const toggleUnit = () => {
+    setUnit((prevUnit) => (prevUnit === "imperial" ? "metric" : "imperial"));
+  };
+
+  const convertToFahrenheit = (celsius) => {
+    return (celsius * 9) / 5 + 32;
+  };
+
+  const convertToCelsius = (fahrenheit) => {
+    return ((fahrenheit - 32) * 5) / 9;
   };
 
   const getWeatherIcon = (weatherId) => {

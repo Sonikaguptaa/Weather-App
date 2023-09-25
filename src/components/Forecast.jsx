@@ -59,7 +59,7 @@ const Forecast = ({ location }) => {
 
   return (
 
-    <div>
+    <div className="md:flex md:justify-between">
 
       <button onClick={toggleUnit}>
         {unit === "metric" ? "°F" : "°C"}
