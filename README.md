@@ -1,5 +1,5 @@
 # Exact Weather
-
+Exact Weather Link : https://main--marvelous-otter-cf5481.netlify.app/
 Exact Weather is a React application that allows users to get weather information for different cities using data from the OpenWeather API. Additionally, it displays the current time for each city using the WorldTime API.
 
 ### Features:
